@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "ns": "browserify",
+  "title": "Browserify",
+  "description": "Browserfiy",
+  "phrases": {
+    "active": "Loading Browserify"
+  },
+  "require": {
+    "browserify": "3.x.x"
+  },
+  "ports": {
+    "input": {
+    },
+    "output": {
+      "browserify": {
+        "title": "Browserify",
+        "type": "function"
+      }
+    }
+  }
+}

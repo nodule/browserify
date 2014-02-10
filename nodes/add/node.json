@@ -1,0 +1,23 @@
+{
+  "name": "add",
+  "ns": "browserify",
+  "title": "Add File",
+  "description": "Add an entry file from file that will be executed when the bundle loads.",
+  "phrases": {
+    "active": "Adding entry file {{input.file}}"
+  },
+  "ports": {
+    "input": {
+      "browserify": {
+        "title": "Browserify",
+        "type": "function"
+      },
+      "file": {
+        "title": "File",
+        "type": "string"
+      }
+    },
+    "output": {
+    }
+  }
+}

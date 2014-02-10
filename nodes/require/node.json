@@ -1,0 +1,34 @@
+{
+  "name": "require",
+  "ns": "browserify",
+  "title": "Require",
+  "description": "Make file available from outside the bundle with require(file).",
+  "phrases": {
+    "active": "Require {{input.file}}"
+  },
+  "ports": {
+    "input": {
+      "browserify": {
+        "title": "Browserfiy",
+        "type": "function"
+      },
+      "file": {
+        "title": "File",
+        "type": "string"
+      },
+      "baseDir": {
+        "title": "Base Dir",
+        "type": "string",
+        "default": null
+      },
+      "expose": {
+        "title": "Expose",
+        "description": "Custom dependency name",
+        "type": "string",
+        "default": null
+      }
+    },
+    "output": {
+    }
+  }
+}

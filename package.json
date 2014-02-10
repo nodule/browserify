@@ -1,0 +1,28 @@
+{
+  "name": "nodule-browserify",
+  "description": "Browserify for Chiχ",
+  "author": "Rob Halff <rob.halff@gmail.com>",
+  "version": "0.0.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodule/browserify.git"
+  },
+  "engines": {
+    "node": ">=0.6.0"
+  },
+  "main": "x",
+  "scripts": {
+    "test": "chit -r"
+  },
+  "devDependencies": {
+    "chit": "0.x.x"
+  },
+  "chix": {
+    "name": "browserify",
+    "color": "rgb(136,96,35)"
+  },
+  "dependencies": {
+    "browserify": "3.x.x"
+  }
+}
