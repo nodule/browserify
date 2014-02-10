@@ -19,7 +19,7 @@
       "insertGlobals": {
         "title": "Insert Globals",
         "type": "boolean",
-        "description": "When opts.insertGlobals is true, always insert process, global, __filename, and __dirname without analyzing the AST for faster builds but larger output bundles"
+        "description": "When opts.insertGlobals is true, always insert process, global, __filename, and __dirname without analyzing the AST for faster builds but larger output bundles",
         "default": false
       },
       "detectGlobals": {
