@@ -1,5 +1,9 @@
 var opts = {};
-if(input.insertGlobals) input.insertGlobals = opts.insertGlobals;
-if(input.detectGlobals) input.detectGlobals = opts.detectGlobals;
-if(input.debug) input.debug = opts.debug;
-output = [input.browserify, 'bundle', opts];
+if(input.insertGlobals) opts.insertGlobals = input.insertGlobals;
+if(input.detectGlobals) opts.detectGlobals = input.detectGlobals;
+if(input.debug) opts.debug = input.debug;
+if(Object.keys(opts).length) {
+  output = [input.browserify, 'bundle', opts];
+} else {
+  output = [input.browserify, 'bundle'];
+}
