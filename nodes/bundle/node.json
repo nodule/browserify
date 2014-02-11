@@ -10,7 +10,7 @@
     "input": {
       "browserify": {
         "title": "Browserify",
-        "type": "function"
+        "type": "Browserify"
       },
       "file": {
         "title": "File",

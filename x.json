@@ -15,7 +15,7 @@
         "input": {
           "browserify": {
             "title": "Browserify",
-            "type": "function"
+            "type": "Browserify"
           },
           "file": {
             "title": "File",
@@ -39,7 +39,7 @@
         "output": {
           "browserify": {
             "title": "Browserify",
-            "type": "function"
+            "type": "Browserify"
           }
         }
       },
@@ -60,7 +60,7 @@
         "input": {
           "browserify": {
             "title": "Browserify",
-            "type": "function"
+            "type": "Browserify"
           },
           "file": {
             "title": "File",
@@ -109,8 +109,8 @@
       "ports": {
         "input": {
           "browserify": {
-            "title": "Browserfiy",
-            "type": "function"
+            "title": "Browserify",
+            "type": "Browserify"
           },
           "file": {
             "title": "File",

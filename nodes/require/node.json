@@ -9,8 +9,8 @@
   "ports": {
     "input": {
       "browserify": {
-        "title": "Browserfiy",
-        "type": "function"
+        "title": "Browserify",
+        "type": "Browserify"
       },
       "file": {
         "title": "File",
