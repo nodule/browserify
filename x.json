@@ -34,6 +34,11 @@
       "fn": "input.browserify.add(input.file);\n"
     },
     {
+      "dependencies": {
+        "npm": {
+          "browserify": "3.x.x"
+        }
+      },
       "ports": {
         "input": {},
         "output": {
@@ -42,9 +47,6 @@
             "type": "Browserify"
           }
         }
-      },
-      "require": {
-        "browserify": "3.x.x"
       },
       "phrases": {
         "active": "Loading Browserify"

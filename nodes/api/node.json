@@ -6,17 +6,18 @@
   "phrases": {
     "active": "Loading Browserify"
   },
-  "require": {
-    "browserify": "3.x.x"
-  },
   "ports": {
-    "input": {
-    },
+    "input": {},
     "output": {
       "browserify": {
         "title": "Browserify",
         "type": "Browserify"
       }
+    }
+  },
+  "dependencies": {
+    "npm": {
+      "browserify": "3.x.x"
     }
   }
 }
