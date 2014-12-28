@@ -31,7 +31,7 @@
       "title": "Add File",
       "ns": "browserify",
       "name": "add",
-      "fn": "input.browserify.add(input.file);\n"
+      "fn": "output = function() {\n  input.browserify.add(input.file);\n  done();\n};\n"
     },
     {
       "dependencies": {
@@ -105,7 +105,7 @@
       "title": "Bundle",
       "ns": "browserify",
       "name": "bundle",
-      "fn": "var opts = {};\nif(input.insertGlobals) opts.insertGlobals = input.insertGlobals;\nif(input.detectGlobals) opts.detectGlobals = input.detectGlobals;\nif(input.debug) opts.debug = input.debug;\nif(Object.keys(opts).length) {\n  output = [input.browserify, 'bundle', opts];\n} else {\n  output = [input.browserify, 'bundle'];\n}\n"
+      "fn": "output = function() {\n  var opts = {};\n  if(input.insertGlobals) opts.insertGlobals = input.insertGlobals;\n  if(input.detectGlobals) opts.detectGlobals = input.detectGlobals;\n  if(input.debug) opts.debug = input.debug;\n  if(Object.keys(opts).length) {\n    input.browserify.bundle(opts, function(err, src) {\n       if(err) {\n         output({error: err});\n       } else {\n         output({src: src});\n       }\n       done();\n    });\n  } else {\n    input.browserify.bundle(function(err, src) {\n       if(err) {\n         output({error: err});\n       } else {\n         output({src: src});\n       }\n       done();\n    });\n  }\n};\n"
     },
     {
       "ports": {
@@ -139,7 +139,7 @@
       "title": "Require",
       "ns": "browserify",
       "name": "require",
-      "fn": "var opts = {};\nif(input.basedir) opts.basedir = input.basedir;\nif(input.expose) opts.expose = input.expose;\n\ninput.browserify.require(input.file, opts);\n"
+      "fn": "output = function() {\n  var opts = {};\n  if(input.basedir) opts.basedir = input.basedir;\n  if(input.expose) opts.expose = input.expose;\n\n  input.browserify.require(input.file, opts);\n  done();\n};\n"
     }
   ],
   "twigs": []

@@ -1,1 +1,4 @@
-input.browserify.add(input.file);
+output = function() {
+  input.browserify.add(input.file);
+  done();
+};
