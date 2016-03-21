@@ -1,1 +1,1 @@
-output.browserify = browserify();
+output.browserify = $.create(browserify());

@@ -6,18 +6,18 @@ output = function() {
   if(Object.keys(opts).length) {
     $.browserify.bundle(opts, function(err, src) {
        if(err) {
-         output({error: err});
+         output({error: $.create(err)});
        } else {
-         output({src: src});
+         output({src: $.create(src)});
        }
        done();
     });
   } else {
     $.browserify.bundle(function(err, src) {
        if(err) {
-         output({error: err});
+         output({error: $.create(err)});
        } else {
-         output({src: src});
+         output({src: $.create(src)});
        }
        done();
     });
