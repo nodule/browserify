@@ -1,4 +1,4 @@
 output = function() {
-  input.browserify.add(input.file);
+  $.browserify.add($.file);
   done();
 };

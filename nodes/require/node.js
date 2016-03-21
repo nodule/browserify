@@ -1,8 +1,8 @@
 output = function() {
   var opts = {};
-  if(input.basedir) opts.basedir = input.basedir;
-  if(input.expose) opts.expose = input.expose;
+  if($.basedir) opts.basedir = $.basedir;
+  if($.expose) opts.expose = $.expose;
 
-  input.browserify.require(input.file, opts);
+  $.browserify.require($.file, opts);
   done();
 };
