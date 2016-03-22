@@ -20,9 +20,9 @@ module.exports = {
       browserify: require('browserify')
     }
   },
-  fn: function api(input, output, state, done, cb, on, browserify) {
+  fn: function api(input, $, output, state, done, cb, on, browserify) {
     var r = function() {
-      output.browserify = browserify();
+      output.browserify = $.create(browserify());
     }.call(this);
     return {
       output: output,

@@ -19,9 +19,9 @@ module.exports = {
     },
     output: {}
   },
-  fn: function add(input, output, state, done, cb, on) {
+  fn: function add(input, $, output, state, done, cb, on) {
     var r = function() {
-      input.browserify.add(input.file);
+      $.browserify.add($.file);
       done();
     }.call(this);
     return {

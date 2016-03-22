@@ -46,34 +46,34 @@ module.exports = {
       }
     }
   },
-  fn: function bundle(input, output, state, done, cb, on) {
+  fn: function bundle(input, $, output, state, done, cb, on) {
     var r = function() {
       var opts = {};
-      if (input.insertGlobals) opts.insertGlobals = input.insertGlobals;
-      if (input.detectGlobals) opts.detectGlobals = input.detectGlobals;
-      if (input.debug) opts.debug = input.debug;
+      if ($.insertGlobals) opts.insertGlobals = $.insertGlobals;
+      if ($.detectGlobals) opts.detectGlobals = $.detectGlobals;
+      if ($.debug) opts.debug = $.debug;
       if (Object.keys(opts).length) {
-        input.browserify.bundle(opts, function(err, src) {
+        $.browserify.bundle(opts, function(err, src) {
           if (err) {
             output({
-              error: err
+              error: $.create(err)
             });
           } else {
             output({
-              src: src
+              src: $.create(src)
             });
           }
           done();
         });
       } else {
-        input.browserify.bundle(function(err, src) {
+        $.browserify.bundle(function(err, src) {
           if (err) {
             output({
-              error: err
+              error: $.create(err)
             });
           } else {
             output({
-              src: src
+              src: $.create(src)
             });
           }
           done();

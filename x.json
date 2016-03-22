@@ -31,7 +31,7 @@
       "title": "Add File",
       "ns": "browserify",
       "name": "add",
-      "fn": "output = function() {\n  input.browserify.add(input.file);\n  done();\n};\n"
+      "fn": "output = function() {\n  $.browserify.add($.file);\n  done();\n};\n"
     },
     {
       "dependencies": {
@@ -55,7 +55,7 @@
       "title": "Browserify",
       "ns": "browserify",
       "name": "api",
-      "fn": "output.browserify = browserify();\n"
+      "fn": "output.browserify = $.create(browserify());\n"
     },
     {
       "ports": {
@@ -105,7 +105,7 @@
       "title": "Bundle",
       "ns": "browserify",
       "name": "bundle",
-      "fn": "output = function() {\n  var opts = {};\n  if(input.insertGlobals) opts.insertGlobals = input.insertGlobals;\n  if(input.detectGlobals) opts.detectGlobals = input.detectGlobals;\n  if(input.debug) opts.debug = input.debug;\n  if(Object.keys(opts).length) {\n    input.browserify.bundle(opts, function(err, src) {\n       if(err) {\n         output({error: err});\n       } else {\n         output({src: src});\n       }\n       done();\n    });\n  } else {\n    input.browserify.bundle(function(err, src) {\n       if(err) {\n         output({error: err});\n       } else {\n         output({src: src});\n       }\n       done();\n    });\n  }\n};\n"
+      "fn": "output = function() {\n  var opts = {};\n  if($.insertGlobals) opts.insertGlobals = $.insertGlobals;\n  if($.detectGlobals) opts.detectGlobals = $.detectGlobals;\n  if($.debug) opts.debug = $.debug;\n  if(Object.keys(opts).length) {\n    $.browserify.bundle(opts, function(err, src) {\n       if(err) {\n         output({error: $.create(err)});\n       } else {\n         output({src: $.create(src)});\n       }\n       done();\n    });\n  } else {\n    $.browserify.bundle(function(err, src) {\n       if(err) {\n         output({error: $.create(err)});\n       } else {\n         output({src: $.create(src)});\n       }\n       done();\n    });\n  }\n};\n"
     },
     {
       "ports": {
@@ -139,7 +139,7 @@
       "title": "Require",
       "ns": "browserify",
       "name": "require",
-      "fn": "output = function() {\n  var opts = {};\n  if(input.basedir) opts.basedir = input.basedir;\n  if(input.expose) opts.expose = input.expose;\n\n  input.browserify.require(input.file, opts);\n  done();\n};\n"
+      "fn": "output = function() {\n  var opts = {};\n  if($.basedir) opts.basedir = $.basedir;\n  if($.expose) opts.expose = $.expose;\n\n  $.browserify.require($.file, opts);\n  done();\n};\n"
     }
   ],
   "twigs": []
