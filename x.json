@@ -11,6 +11,13 @@
   },
   "nodes": [
     {
+      "name": "add",
+      "ns": "browserify",
+      "title": "Add File",
+      "description": "Add an entry file from file that will be executed when the bundle loads.",
+      "phrases": {
+        "active": "Adding entry file {{input.file}}"
+      },
       "ports": {
         "input": {
           "browserify": {
@@ -24,20 +31,15 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Adding entry file {{input.file}}"
-      },
-      "description": "Add an entry file from file that will be executed when the bundle loads.",
-      "title": "Add File",
-      "ns": "browserify",
-      "name": "add",
       "fn": "output = function() {\n  $.browserify.add($.file);\n  done();\n};\n"
     },
     {
-      "dependencies": {
-        "npm": {
-          "browserify": "3.x.x"
-        }
+      "name": "api",
+      "ns": "browserify",
+      "title": "Browserify",
+      "description": "Browserfiy",
+      "phrases": {
+        "active": "Loading Browserify"
       },
       "ports": {
         "input": {},
@@ -48,16 +50,21 @@
           }
         }
       },
-      "phrases": {
-        "active": "Loading Browserify"
+      "dependencies": {
+        "npm": {
+          "browserify": "3.x.x"
+        }
       },
-      "description": "Browserfiy",
-      "title": "Browserify",
-      "ns": "browserify",
-      "name": "api",
       "fn": "output.browserify = $.create(browserify());\n"
     },
     {
+      "name": "bundle",
+      "ns": "browserify",
+      "title": "Bundle",
+      "description": "Bundle the files and their dependencies into a single javascript file.",
+      "phrases": {
+        "active": "Bundling to {{input.file}}"
+      },
       "ports": {
         "input": {
           "browserify": {
@@ -98,16 +105,16 @@
           }
         }
       },
-      "phrases": {
-        "active": "Bundling to {{input.file}}"
-      },
-      "description": "Bundle the files and their dependencies into a single javascript file.",
-      "title": "Bundle",
-      "ns": "browserify",
-      "name": "bundle",
       "fn": "output = function() {\n  var opts = {};\n  if($.insertGlobals) opts.insertGlobals = $.insertGlobals;\n  if($.detectGlobals) opts.detectGlobals = $.detectGlobals;\n  if($.debug) opts.debug = $.debug;\n  if(Object.keys(opts).length) {\n    $.browserify.bundle(opts, function(err, src) {\n       if(err) {\n         output({error: $.create(err)});\n       } else {\n         output({src: $.create(src)});\n       }\n       done();\n    });\n  } else {\n    $.browserify.bundle(function(err, src) {\n       if(err) {\n         output({error: $.create(err)});\n       } else {\n         output({src: $.create(src)});\n       }\n       done();\n    });\n  }\n};\n"
     },
     {
+      "name": "require",
+      "ns": "browserify",
+      "title": "Require",
+      "description": "Make file available from outside the bundle with require(file).",
+      "phrases": {
+        "active": "Require {{input.file}}"
+      },
       "ports": {
         "input": {
           "browserify": {
@@ -132,15 +139,7 @@
         },
         "output": {}
       },
-      "phrases": {
-        "active": "Require {{input.file}}"
-      },
-      "description": "Make file available from outside the bundle with require(file).",
-      "title": "Require",
-      "ns": "browserify",
-      "name": "require",
       "fn": "output = function() {\n  var opts = {};\n  if($.basedir) opts.basedir = $.basedir;\n  if($.expose) opts.expose = $.expose;\n\n  $.browserify.require($.file, opts);\n  done();\n};\n"
     }
-  ],
-  "twigs": []
+  ]
 }
